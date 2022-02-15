@@ -1,0 +1,25 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "uuid": "^8.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-G-J/note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/K-G-J/note-taker/issues"
+  },
+  "homepage": "https://github.com/K-G-J/note-taker#readme"
+}
