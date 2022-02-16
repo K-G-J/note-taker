@@ -9,6 +9,6 @@ This app allows a user to write and delete notes with unique IDs that are stored
 ## Installation 
 (1) Use the deployed url above and [here](https://note-taker-kj.herokuapp.com/)
 <br> (2) OR clone the repository
+<br> *make sure you have Node.js installed*
   - in terminal run: run npm init, run npm i express, run npm i uuid
   - in terminal run: "npm start" then navigate to localhost environment 
-  - *make sure you have Node.js installed*
