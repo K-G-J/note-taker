@@ -1,14 +1,14 @@
 const notesArr = require('../../db/db');
 const fs = require('fs');
 const path = require('path')
-import { v4 as uuidv4 } from 'uuid';
+const { v4: uuidv4 } = require('uuid');
 const router = require('express').Router();
 
 
 router
 .route('/notes')
 .get((req, res) => {
-    res.json(notesArr.slice(1));
+    res.json(notesArr);
 })
 .post((req, res) => {
     const newNote = createNewNote(req.body, notesArr)
@@ -17,13 +17,12 @@ router
 
 function createNewNote(body, notesArr) {
     const newNote = body;
-    if (!Array.isArray(notesArr))
-    notesArr = [];
-    if (notesArr.length === 0)
-    notesArr.push(0);
+    if (!Array.isArray(notesArr)) {
+        notesArr = [];
+    }
     newNote.id = uuidv4();
     notesArr.push(newNote);
-    fs.writeFileSync(path.join(__dirname, '../db/db.json'),JSON.stringify(notesArr, null, 2));
+    fs.writeFileSync(path.join(__dirname, '../../db/db.json'),JSON.stringify(notesArr, null, 2));
     return newNote;
 }
 router
@@ -31,7 +30,7 @@ router
     const id = req.params;
     const noteIndex = notesArr.findIndex(note => note.id === id);
     notesArr.splice(noteIndex, 1);
-    fs.writeFileSync(path.join(__dirname, '../db/db.json'),JSON.stringify(notesArr, null, 2));
+    fs.writeFileSync(path.join(__dirname, '../../db/db.json'),JSON.stringify(notesArr, null, 2));
     res.json(notesArr)
 });
 
