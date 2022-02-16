@@ -11,4 +11,4 @@ This app allows a user to write and delete notes with unique IDs that are stored
 <br> (2) OR clone the repository
   - in terminal run: run npm init, run npm i express, run npm i uuid
   - in terminal run: "npm start" then navigate to localhost environment 
-  - *make sure you have Node.js installed 
+  - *make sure you have Node.js installed*
